@@ -22,7 +22,7 @@
   </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Stratiteq.Extensions\Stratiteq.Extensions.csproj" />
+    <ProjectReference Include="..\..\src\Stratiteq.Extensions.NetStandard\Stratiteq.Extensions.NetStandard.csproj" />
   </ItemGroup>
 
 </Project>
