@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Stratiteq.Extensions
+namespace Stratiteq.Extensions.NetStandard
 {
     public static class IEnumerableExtensions
     {
