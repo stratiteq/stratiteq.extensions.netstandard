@@ -35,11 +35,13 @@ steps:
     versioningScheme: byBuildNumber
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet test'
   inputs:
     command: 'test'
     projects: 'tests/**/*.csproj'
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet pack'
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
@@ -48,6 +50,7 @@ steps:
     versionEnvVar: GitVersion.NuGetVersion
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet push'
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
