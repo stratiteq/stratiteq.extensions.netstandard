@@ -24,13 +24,13 @@ steps:
   displayName: 'dotnet restore from feed'
   inputs:
     command: 'restore'
-    projects: '**/*.csproj'
+    projects: '$(parameters.projects)'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
   displayName: 'dotnet build'
   inputs:
-    projects: '**/*.csproj'
+    projects: '$(parameters.projects)'
     arguments: '--configuration $(BuildConfiguration) /p:Version=$(GitVersion.NuGetVersion)'
     versioningScheme: byBuildNumber
 
@@ -44,7 +44,7 @@ steps:
   displayName: 'dotnet pack'
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.csproj'
+    packagesToPack: '$(parameters.projects)'
     nobuild: true
     versioningScheme: byEnvVar
     versionEnvVar: GitVersion.NuGetVersion
@@ -55,5 +55,5 @@ steps:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: '$(artifact-feed)'
+    publishVstsFeed: '$(parameters.artifact-feed)'
     versioningScheme: byBuildNumber
