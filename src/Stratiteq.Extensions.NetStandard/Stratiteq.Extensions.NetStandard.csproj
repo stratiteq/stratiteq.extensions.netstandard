@@ -5,13 +5,17 @@
     <CodeAnalysisRuleSet>..\..\project.ruleset</CodeAnalysisRuleSet>
     <LangVersion>latest</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Useful extension classes for netstandard 2.0.</Description>
+    <Description>Useful extension methods for netstandard 2.0.</Description>
     <Company>Stratiteq Sweden AB</Company>
     <Authors>Stratiteq Sweden AB</Authors>
     <AssemblyName>Stratiteq.Extensions.NetStandard</AssemblyName>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <Version>1.0.0</Version>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <PackageIconUrl>https://www.stratiteq.com/wp-content/uploads/sq-logo-black-64x64.png</PackageIconUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/stratiteq/stratiteq.extensions.netstandard</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/stratiteq/stratiteq.extensions.netstandard</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
