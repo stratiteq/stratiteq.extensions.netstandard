@@ -4,23 +4,26 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Stratiteq.Extensions.NetStandard
 {
-    public static class IEnumerableExtensions
+    public static partial class IEnumerableExtensions
     {
         /// <summary>
-        /// Apply an action to each element.
+        /// Check if all items are equal. Non-generic version.
         /// </summary>
         /// <typeparam name="T">Type of elements.</typeparam>
-        /// <param name="enumerable">Collection to iterate.</param>
-        /// <param name="action">Action to apply on each element.</param>
-        public static void ForEach<T>(this IEnumerable<T> enumerable, Action<T> action)
+        /// <param name="values">Collection to iterate.</param>
+        /// <param name="value">The value to check if all are equal to.</param>
+        public static bool AllEqual(this IEnumerable<int> values, int value)
         {
-            foreach (T item in enumerable)
+            if (!values.Any())
             {
-                action(item);
+                return true;
             }
+
+            return values.All(v => value.Equals(v));
         }
     }
 }
